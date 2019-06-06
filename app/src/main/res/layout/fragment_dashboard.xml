@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/blue_grey_primary">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <include layout="@layout/title_collapsing"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     app:layout_collapseMode="parallax" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/dashboard_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="47.5dp"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                app:tabBackground="@color/white"
+                app:tabIndicatorHeight="1dp"
+                app:tabTextColor="#727272"
+                app:tabSelectedTextColor="@color/blue_primary"
+                app:tabIndicatorColor="@color/blue_primary"/>
+
+        <View
+                android:id="@+id/dashboard_tab_indicator"
+                android:layout_width="match_parent"
+                android:layout_height="1.8dp"
+                android:background="#21000000"
+                android:layout_below="@id/dashboard_tab_layout"/>
+
+        <androidx.viewpager.widget.ViewPager
+                android:id="@+id/dashboard_view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_below="@id/dashboard_tab_indicator"/>
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
