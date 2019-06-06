@@ -1,0 +1,2 @@
+# InfiniteDoubleViewPager
+after update
